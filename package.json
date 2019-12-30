@@ -1,0 +1,21 @@
+{
+  "name": "@binssoft/ngx-captcha",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "main": "bundles/binssoft-ngx-captcha.umd.js",
+  "module": "fesm5/binssoft-ngx-captcha.js",
+  "es2015": "fesm2015/binssoft-ngx-captcha.js",
+  "esm5": "esm5/binssoft-ngx-captcha.js",
+  "esm2015": "esm2015/binssoft-ngx-captcha.js",
+  "fesm5": "fesm5/binssoft-ngx-captcha.js",
+  "fesm2015": "fesm2015/binssoft-ngx-captcha.js",
+  "typings": "binssoft-ngx-captcha.d.ts",
+  "metadata": "binssoft-ngx-captcha.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
