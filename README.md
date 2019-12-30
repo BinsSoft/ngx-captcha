@@ -1,24 +1,110 @@
-# NgxCaptcha
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+# @binssoft/ngx-captcha
 
-## Code scaffolding
+A plugins to build your own captcha for your angular application. This plugin will help you to add CAPTCHA in your application form where you want to prevent the access for a BOT.
 
-Run `ng generate component component-name --project ngx-captcha` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-captcha`.
-> Note: Don't forget to add `--project ngx-captcha` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]([https://github.com/BinsSoft/ngx-captcha](https://github.com/BinsSoft/ngx-captcha)) [![Support](https://img.shields.io/badge/Support-Angular%204%2B-blue.svg?style=flat-square)]() [![Support](https://img.shields.io/badge/Support-Angular%205%2B-blue.svg?style=flat-square)]() [![Support](https://img.shields.io/badge/Support-Angular%206%2B-blue.svg?style=flat-square)]() [![Support](https://img.shields.io/badge/Support-Angular%207%2B-blue.svg?style=flat-square)]() [![Support](https://img.shields.io/badge/Support-Angular%208%2B-blue.svg?style=flat-square)]() [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)]()
 
-Run `ng build ngx-captcha` to build the project. The build artifacts will be stored in the `dist/` directory.
+> Please support this project by simply putting a Github star. Share this library with friends on Twitter and everywhere else you can.
 
-## Publishing
+## Table of contents:
 
-After building your library with `ng build ngx-captcha`, go to the dist folder `cd dist/ngx-captcha` and run `npm publish`.
+ 
+ - Getting started
+   - [Installation](#installation)
+   - [Implementation](#implementation)
+   - [Settings Option](#settings-option)
+- [Demo](#demo)
+ - [Creators](#creator)
+ - [License](#license)
 
-## Running unit tests
+##  Getting started 
 
-Run `ng test ngx-captcha` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Further help
+> npm install @binssoft/ngx-captcha --save
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Implementation
+
+import "**NgxCaptchaModule**" in your application module. For example: **app.module.ts**
+
+    import {NgxCaptchaModule} from  'ngx-pager';
+    @NgModule({
+	    imports:[
+		    NgxCaptchaModule
+		    ...
+	    ]
+    })
+    export  class  AppModule { }
+
+
+
+add configration in your component. For example : **app.component.ts**
+
+	import {NgxCaptchaService} from  '@binssoft/ngx-captcha'
+	
+    export  class  AppComponent  implements  OnInit {
+    captchaStatus:any = null;
+    captchaConfig:any = {
+       length:6,
+       cssClass:'custom',
+       back: {
+         stroke:"#2F9688",
+         solid:"#f2efd2"
+       } ,
+       font:{
+        color:"#000000",
+        size:"35px"
+       }
+     };
+    
+     constructor(private captchaService:NgxCaptchaService){}
+     ngOnInit() {
+	      this.captchaService.captchStatus.subscribe((status)=>{
+	        this.captchaStatus= status;
+	        if (status == false) {
+	          alert("Opps!\nCaptcha mismatch");
+	        } else  if (status == true) {
+	          alert("Success!\nYou are right");
+	        }
+	      });
+   	 }
+   	}
+
+				
+
+
+
+Add **ngx-captcha** html tag in your component html. For example : **app.component.html**
+
+    <ngx-captcha  [config]="captchaConfig"></ngx-captcha>
+
+ - **[config]** : to set the pagination configuration
+
+
+### Settings Option
+
+|                |Description                          |Default Value                         |
+|----------------|-------------------------------|-----------------------------|-----------------------------|
+|`type`| 1 or 2 (EX: 1= alpha numaric characters to type, 2= solve a smiple calculation)        |     `1`       |            |
+|`length`| length of characters  you want to show           | 6 |            |
+|`cssClass`| custom class you want to add for your own theme           | |            |
+|`font`| set the text font style          | |            |
+|`font.size`| set the size of display text          | 40px |            |
+|`font.family`| set the font family of display text| Arial  |            |
+|`back`|  set the background of the captcha box      |    |    |
+|`back.stroke`| if you want to add the strock in the background, add the color code  |    |    |
+| `back.solid` | if you want to add a solid color in your captcha body, add the color code  |  #f2efd2  |   |
+
+## Demo
+[Click Here](https://stackblitz.com/edit/ngx-pager) for the demo
+
+## Creator
+
+#### [Tonmoy Nandy](tonmoy.nandy@gmail.com)
+- [@GitHub](https://github.com/tonmoynandy)
+
+## License
+
+#### The MIT License (MIT)
