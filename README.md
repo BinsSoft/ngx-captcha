@@ -85,17 +85,17 @@ Add **ngx-captcha** html tag in your component html. For example : **app.compone
 
 ### Settings Option
 
-|                |Description                          |Default Value                         |
-|----------------|-------------------------------|-----------------------------|-----------------------------|
-|`type`| 1 or 2 (EX: 1= alpha numaric characters to type, 2= solve a smiple calculation)        |     `1`       |            |
-|`length`| length of characters  you want to show           | 6 |            |
-|`cssClass`| custom class you want to add for your own theme           | |            |
-|`font`| set the text font style          | |            |
-|`font.size`| set the size of display text          | 40px |            |
-|`font.family`| set the font family of display text| Arial  |            |
-|`back`|  set the background of the captcha box      |    |    |
-|`back.stroke`| if you want to add the strock in the background, add the color code  |    |    |
-| `back.solid` | if you want to add a solid color in your captcha body, add the color code  |  #f2efd2  |   |
+|                |Description                          |Default Value                         
+|----------------|-------------------------------|-----------------------------
+|`type`| 1 or 2 (EX: 1= alpha numaric characters to type, 2= solve a smiple calculation)        |     `1`       
+|`length`| length of characters  you want to show           | 6 
+|`cssClass`| custom class you want to add for your own theme           | 
+|`font`| set the text font style          | 
+|`font.size`| set the size of display text          | 40px 
+|`font.family`| set the font family of display text| Arial  
+|`back`|  set the background of the captcha box      |    
+|`back.stroke`| if you want to add the strock in the background, add the color code  |    
+| `back.solid` | if you want to add a solid color in your captcha body, add the color code  |  #f2efd2  
 
 ## Demo
 [Click Here](https://stackblitz.com/edit/ngx-pager) for the demo
